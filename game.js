@@ -15,6 +15,10 @@ words = [
 //Randomly Selects the word
 
 exports.selectWord = function(){
+	//check to see if word more words on the list 
+	if(words.length == 0){
+		return false;
+	}
 	//selec one from random
 	var ind = (words.length-1) * (Math.random());
 	ind = Math.round(ind);

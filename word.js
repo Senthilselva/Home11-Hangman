@@ -1,7 +1,7 @@
 //Constructor for word function
 
 exports.Word = function(vocab,definition){
-	this.vocab = vocab;
+	this.vocab = vocab.toLowerCase();
 	this.definition = definition;
 	this.matchedLetter=[];
 	this.guessedLetter=[];
@@ -16,6 +16,7 @@ exports.Word = function(vocab,definition){
 		return newWord;
 	}
 
+	console.log("Hint : "+ this.definition);
 
 	this.checkLetter = function(letter){
 		//console.log("checkLetter : "+letter);
@@ -53,6 +54,8 @@ exports.Word = function(vocab,definition){
 		this.newWord = newWordArry.join("");
 		//console.log(this.newWord);
 	}
+
+	//check to see if the new word built is same as the original word.
 
 	this.checkWord = function(){
 		if(this.vocab == this.newWord){
